@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <!-- nav -->
+        <nav>
+            <ul class="box-primary-nav">
+                <li class="box-label">About me</li>
+
+                <li><a href="{% url 'index' %}">Intro</a></li>
+                <li><a href="{% url 'about' %}">About me</a></li>
+                <li><a href="{% url 'services' %}">services</a></li>
+                <li><a href="{% url 'portfolio' %}">portfolio</a> <i class="ion-ios-circle-filled color"></i></li>
+                <li><a href="{% url 'contact' %}">contact me</a></li>
+
+                <li class="box-label">Follow me</li>
+
+                <li class="box-social"><a href="https://www.facebook.com/M.T.Tasin.20/"><i class="ion-social-facebook"></i></a></li>
+                <li class="box-social"><a href="https://www.instagram.com/m.t.tasin20/"><i class="ion-social-instagram"></i></a></li>
+                <li class="box-social"><a href="https://twitter.com/MTTasin1"><i class="ion-social-twitter"></i></a></li>
+                <li class="box-social"><a href="https://github.com/MTTasin"><i class="ion-social-github"></i></a></li>
+            </ul>
+        </nav>
+        <!-- end nav -->
+    </div>
+
+    <!-- top bar -->
+    <div class="top-bar">
+        <h1>portfolio</h1>
+        <p><a href="index.html">Home</a> / Portfolio</p>
+    </div>
+    <!-- end top bar -->
+
+    <!-- main container -->
+    <div class="main-container portfolio-inner clearfix">
+        <!-- portfolio div -->
+        <div class="portfolio-div">
+            <div class="portfolio">
+                <!-- portfolio_filter -->
+                <!-- <div class="categories-grid wow fadeInLeft">
+                    <nav class="categories text-center">
+                        <ul class="portfolio_filter">
+                            <li><a href="" class="active" data-filter="*">All</a></li>
+                            <li><a href="" data-filter=".hello">Photography</a></li>
+                            <li><a href="" data-filter=".logo">Logo</a></li>
+                            <li><a href="" data-filter=".graphics">Graphics</a></li>
+                            <li><a href="" data-filter=".ads">Advertising</a></li>
+                            <li><a href="" data-filter=".fashion">Fashion</a></li>
+                        </ul>
+                    </nav>
+                </div> -->
+                <!-- portfolio_filter -->
+
+                <!-- portfolio_container -->
+                <div class="no-padding portfolio_container clearfix">
+                    <!-- single work -->
+                    {% for item in projects %}
+                    <div class="col-md-4 col-sm-6">
+                        <div class="portfolio_item">
+                            <img src="{{ item.image.url }}" alt="image" class="img-fluid" />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>{{ item.title }}</span>
+                                        <a href="{% url 'project_details' item.id %}"><em>Details</em></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- end single work -->
+
+                </div>
+                <!-- end portfolio_container -->
+            </div>
+            <!-- portfolio -->
+        </div>
+        <!-- end portfolio div -->
+    </div>
+    <!-- end main container -->
+
+{% endblock %}

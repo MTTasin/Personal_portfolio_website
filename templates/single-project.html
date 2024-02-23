@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+        <!-- nav -->
+        <nav>
+            <ul class="box-primary-nav">
+                <li class="box-label">About me</li>
+
+                <li><a href="{% url 'index' %}">Intro</a></li>
+                <li><a href="{% url 'about' %}">About me</a></li>
+                <li><a href="{% url 'services' %}">services</a></li>
+                <li><a href="{% url 'portfolio' %}">portfolio</a> <i class="ion-ios-circle-filled color"></i></li>
+                <li><a href="{% url 'contact' %}">contact me</a></li>
+
+
+
+                <li class="box-label">Follow me</li>
+
+                <li class="box-social"><a href="https://www.facebook.com/M.T.Tasin.20/"><i class="ion-social-facebook"></i></a></li>
+                <li class="box-social"><a href="https://www.instagram.com/m.t.tasin20/"><i class="ion-social-instagram"></i></a></li>
+                <li class="box-social"><a href="https://twitter.com/MTTasin1"><i class="ion-social-twitter"></i></a></li>
+                <li class="box-social"><a href="https://github.com/MTTasin"><i class="ion-social-github"></i></a></li>
+            </ul>
+        </nav>
+        <!-- end nav -->
+    </div>
+    
+    <!-- top-bar -->
+    <div class="top-bar">
+        <h1>project title</h1>
+        <p><a href="{% url 'index' %}">Home</a> / <a href="{% url 'portfolio' %}">portfolio</a> / {{ project.title }}</p>
+    </div>
+    <!-- end top-bar -->
+    
+    <!-- main-container -->
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{{ project.image.url }}" alt="" class="img-fluid" />
+                <div class="h-30"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-uppercase">{{ project.title }}</h3>
+                <h5>Creative & interactive web application development</h5>
+                <div class="h-30"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9">
+                <p>{{ project.description | safe }}</p>
+                <div class="h-30"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><i class="ion-android-calendar"></i>&nbsp;{{ project.date }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><i class="ion-android-person"></i>&nbsp;M.T. Tasin</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="{{ project.live_link }}" class="redirection btn"><em>View Live Project</em></a>
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <ul class="cat-ul">
+                    <li><h5>Technology used in this project</h5></li>
+                    {% for item in technology %}
+                    <li><i class="ion-ios-circle-filled"></i>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                <div class="h-10"></div>
+                <h4>Follow me</h4>
+                <ul class="social-ul">
+                    <li class="box-social"><a href="https://www.facebook.com/M.T.Tasin.20/"><i class="ion-social-facebook"></i></a></li>
+                    <li class="box-social"><a href="https://www.instagram.com/m.t.tasin20/"><i class="ion-social-instagram"></i></a></li>
+                    <li class="box-social"><a href="https://twitter.com/MTTasin1"><i class="ion-social-twitter"></i></a></li>
+                    <li class="box-social"><a href="https://github.com/MTTasin"><i class="ion-social-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end main-container -->
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <!-- nav -->
+        <nav>
+            <ul class="box-primary-nav">
+                <li class="box-label">About me</li>
+
+                <li><a href="{% url 'index' %}">Intro</a></li> 
+                <li><a href="{% url 'about' %}">About me</a></li>
+                <li><a href="{% url 'services' %}">services</a><i class="ion-ios-circle-filled color"></i></li>
+                <li><a href="{% url 'portfolio' %}">portfolio</a></li>
+                <li><a href="{% url 'contact' %}">contact me</a></li>
+
+
+
+                <li class="box-label">Follow me</li>
+
+                <li class="box-social"><a href="https://www.facebook.com/M.T.Tasin.20/"><i class="ion-social-facebook"></i></a></li>
+                <li class="box-social"><a href="https://www.instagram.com/m.t.tasin20/"><i class="ion-social-instagram"></i></a></li>
+                <li class="box-social"><a href="https://twitter.com/MTTasin1"><i class="ion-social-twitter"></i></a></li>
+                <li class="box-social"><a href="https://github.com/MTTasin"><i class="ion-social-github"></i></a></li>
+            </ul>
+        </nav>
+        <!-- end nav -->
+    </div>
+
+    <!-- top bar -->
+    <div class="top-bar">
+        <h1>services</h1>
+        <p><a href="index.html">Home</a> / Services</p>
+    </div>
+    <!-- end top bar -->
+
+    <div class="container main-container">
+        <div class="clearfix row">
+
+            <!-- service-box -->
+            <div class="col-md-4 service-box">
+                <i class="ion-android-favorite-outline size-50"></i>
+                <h3>Responsive Design</h3>
+                <div class="h-10"></div>
+                <p>Our web applications are designed to look great on any device. Whether it's a desktop, laptop, tablet or phone</p>
+            </div>
+            <!-- end service-box -->
+
+            <!-- service-box -->
+            <div class="col-md-4 service-box">
+                <i class="ion-android-options size-50"></i>
+                <h3>Easy Customization</h3>
+                <div class="h-10"></div>
+                <p>Our web applications are easily customizable to meet your specific needs.</p>
+            </div>
+            <!-- end service-box -->
+
+            <!-- service-box -->
+            <div class="col-md-4  service-box">
+                <i class="ion-android-checkmark-circle size-50"></i>
+                <h3>Creative Design</h3>
+                <div class="h-10"></div>
+                <p>Our web applications are designed with creativity in mind. We use the latest technology to create web applications</p>
+            </div>
+            <!-- end service-box -->
+
+            <!-- service-box -->
+            <div class="col-md-4  service-box">
+                <i class="ion-ios-pulse-strong size-50"></i>
+                <h3>User friendly</h3>
+                <div class="h-10"></div>
+                <p>Our web applications are easy to use. And their user interface is intuitive</p>
+            </div>
+            <!-- end service-box -->
+
+            <!-- service-box -->
+            <div class="col-md-4  service-box">
+                <i class="ion-earth size-50"></i>
+                <h3>World wide Reach</h3>
+                <div class="h-10"></div>
+                <p>Our web applications are spread across the world. And they are accessible from any part of the world</p>
+            </div>
+            <!-- end service-box -->
+
+            <!-- service-box -->
+            <div class="col-md-4  service-box">
+                <i class="ion-speedometer size-50"></i>
+                <h3>Fast Loading</h3>
+                <div class="h-10"></div>
+                <p>Our web applications are fast loading. And they load quickly</p>
+            </div>
+            <!-- end service-box -->
+
+        </div>
+    </div>
+
+
+{% endblock %}
